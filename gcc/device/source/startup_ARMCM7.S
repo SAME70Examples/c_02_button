@@ -87,7 +87,70 @@ __isr_vector:
 	.long	SysTick_Handler       /* SysTick Handler */
 
 	/* External interrupts */
-	.long	Default_Handler
+	.long     SUPC_Handler              /*  0 Supply Controller */
+	.long     RSTC_Handler              /*  1 Reset Controller */
+	.long     RTC_Handler               /*  2 Real Time Clock */
+	.long     RTT_Handler               /*  3 Real Time Timer */
+	.long     WDT_Handler               /*  4 Watchdog Timer */
+	.long     PMC_Handler               /*  5 Power Management Controller */
+	.long     EFC_Handler               /*  6 Enhanced Embedded Flash Controller */
+	.long     UART0_Handler             /*  7 UART 0 */
+	.long     UART1_Handler             /*  8 UART 1 */
+	.long     0                         /*  9 Reserved */
+	.long     PIOA_Handler              /* 10 Parallel I/O Controller A */
+	.long     PIOB_Handler              /* 11 Parallel I/O Controller B */
+	.long     PIOC_Handler              /* 12 Parallel I/O Controller C */
+	.long     USART0_Handler            /* 13 USART 0 */
+	.long     USART1_Handler            /* 14 USART 1 */
+	.long     USART2_Handler            /* 15 USART 2 */
+	.long     PIOD_Handler              /* 16 Parallel I/O Controller D */
+	.long     PIOE_Handler              /* 17 Parallel I/O Controller E */
+	.long     HSMCI_Handler             /* 18 Multimedia Card Interface */
+	.long     TWIHS0_Handler            /* 19 Two Wire Interface 0 HS */
+	.long     TWIHS1_Handler            /* 20 Two Wire Interface 1 HS */
+	.long     SPI0_Handler              /* 21 Serial Peripheral Interface 0 */
+	.long     SSC_Handler               /* 22 Synchronous Serial Controller */
+	.long     TC0_Handler               /* 23 Timer/Counter 0 */
+	.long     TC1_Handler               /* 24 Timer/Counter 1 */
+	.long     TC2_Handler               /* 25 Timer/Counter 2 */
+	.long     TC3_Handler               /* 26 Timer/Counter 3 */
+	.long     TC4_Handler               /* 27 Timer/Counter 4 */
+	.long     TC5_Handler               /* 28 Timer/Counter 5 */
+	.long     AFEC0_Handler             /* 29 Analog Front End 0 */
+	.long     DACC_Handler              /* 30 Digital To Analog Converter */
+	.long     PWM0_Handler              /* 31 Pulse Width Modulation 0 */
+	.long     ICM_Handler               /* 32 Integrity Check Monitor */
+	.long     ACC_Handler               /* 33 Analog Comparator */
+	.long     USBHS_Handler             /* 34 USB Host / Device Controller */
+	.long     MCAN0_Handler             /* 35 MCAN Controller 0 */
+	.long     0                         /* 36 Reserved */
+	.long     MCAN1_Handler             /* 37 MCAN Controller 1 */
+	.long     0                         /* 38 Reserved */
+	.long     GMAC_Handler              /* 39 Ethernet MAC */
+	.long     AFEC1_Handler             /* 40 Analog Front End 1 */
+	.long     TWIHS2_Handler            /* 41 Two Wire Interface 2 HS */
+	.long     SPI1_Handler              /* 42 Serial Peripheral Interface 1 */
+	.long     QSPI_Handler              /* 43 Quad I/O Serial Peripheral Interface */
+	.long     UART2_Handler             /* 44 UART 2 */
+	.long     UART3_Handler             /* 45 UART 3 */
+	.long     UART4_Handler             /* 46 UART 4 */
+	.long     TC6_Handler               /* 47 Timer/Counter 6 */
+	.long     TC7_Handler               /* 48 Timer/Counter 7 */
+	.long     TC8_Handler               /* 49 Timer/Counter 8 */
+	.long     TC9_Handler               /* 50 Timer/Counter 9 */
+	.long     TC10_Handler              /* 51 Timer/Counter 10 */
+	.long     TC11_Handler              /* 52 Timer/Counter 11 */
+	.long     0                         /* 53 Reserved */
+	.long     0                         /* 54 Reserved */
+	.long     0                         /* 55 Reserved */
+	.long     AES_Handler               /* 56 AES */
+	.long     TRNG_Handler              /* 57 True Random Generator */
+	.long     XDMAC_Handler             /* 58 DMA */
+	.long     ISI_Handler               /* 59 Camera Interface */
+	.long     PWM1_Handler              /* 60 Pulse Width Modulation 1 */
+	.long     0                         /* 61 Reserved */
+	.long     SDRAMC_Handler            /* 62 SDRAM Controller */
+	.long     RSWDT_Handler             /* 63 Reinforced Secure Watchdog Timer */
 
 	.size	__isr_vector, . - __isr_vector
 
@@ -253,5 +316,63 @@ Default_Handler:
 	def_irq_handler	PendSV_Handler
 	def_irq_handler	SysTick_Handler
 	def_irq_handler	DEF_IRQHandler
+
+	def_irq_handler SUPC_Handler
+	def_irq_handler RSTC_Handler
+	def_irq_handler RTC_Handler
+	def_irq_handler RTT_Handler
+	def_irq_handler WDT_Handler
+	def_irq_handler PMC_Handler
+	def_irq_handler EFC_Handler
+	def_irq_handler UART0_Handler
+	def_irq_handler UART1_Handler
+	def_irq_handler PIOA_Handler
+	def_irq_handler PIOB_Handler
+	def_irq_handler PIOC_Handler
+	def_irq_handler USART0_Handler
+	def_irq_handler USART1_Handler
+	def_irq_handler USART2_Handler
+	def_irq_handler PIOD_Handler
+	def_irq_handler PIOE_Handler
+	def_irq_handler HSMCI_Handler
+	def_irq_handler TWIHS0_Handler
+	def_irq_handler TWIHS1_Handler
+	def_irq_handler SPI0_Handler
+	def_irq_handler SSC_Handler
+	def_irq_handler TC0_Handler
+	def_irq_handler TC1_Handler
+	def_irq_handler TC2_Handler
+	def_irq_handler TC3_Handler
+	def_irq_handler TC4_Handler
+	def_irq_handler TC5_Handler
+	def_irq_handler AFEC0_Handler
+	def_irq_handler DACC_Handler
+	def_irq_handler PWM0_Handler
+	def_irq_handler ICM_Handler
+	def_irq_handler ACC_Handler
+	def_irq_handler USBHS_Handler
+	def_irq_handler MCAN0_Handler
+	def_irq_handler MCAN1_Handler
+	def_irq_handler GMAC_Handler
+	def_irq_handler AFEC1_Handler
+	def_irq_handler TWIHS2_Handler
+	def_irq_handler SPI1_Handler
+	def_irq_handler QSPI_Handler
+	def_irq_handler UART2_Handler
+	def_irq_handler UART3_Handler
+	def_irq_handler UART4_Handler
+	def_irq_handler TC6_Handler
+	def_irq_handler TC7_Handler
+	def_irq_handler TC8_Handler
+	def_irq_handler TC9_Handler
+	def_irq_handler TC10_Handler
+	def_irq_handler TC11_Handler
+	def_irq_handler AES_Handler
+	def_irq_handler TRNG_Handler
+	def_irq_handler XDMAC_Handler
+	def_irq_handler ISI_Handler
+	def_irq_handler PWM1_Handler
+	def_irq_handler SDRAMC_Handler
+	def_irq_handler RSWDT_Handler
 
 	.end
